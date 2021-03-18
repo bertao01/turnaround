@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Success from '../../images/growth.png'
 import Minimal from '../../images/minimalism.jpeg'
 import Button from '../partials/Button';
+import data from '../partials/data';
 
 const Minimalism = () => {
+
+    const [ num, setNum ] = useState(7)
+
+    const handleClick = (param) => {
+        
+        if( param === 'back' && num !== 7 ){
+            setNum( num - 1 )
+        } else if (param === 'next' && num !== 8){
+            setNum( num + 1 )
+        }
+    }
+
     return (
         <div className="d-flex">
             <img src={Minimal} className="minimalism-img" alt=""/>
             <div>
-                <h2>Get rid of garbage!</h2>
-                <p>Minimalism is owning fewer possessions. Minimalism is intentionally living with only the things you really need. Those items that support your purpose. When you remove the distraction of excess possessions, you can focus more on those things that matter most.</p>
-                <Button color="#f44336" value="Back"/>
-                <Button color="#4CAF50" value="Next"/>
+            <h2>{data[num].title}</h2>
+                <p>{data[num].text}</p>
+                <Button color="#f44336" value="Back" event={() => handleClick('back')}/>
+                <Button color="#4CAF50" value="Next" event={() => handleClick('next')}/>
+            
             </div>
         </div>
     )

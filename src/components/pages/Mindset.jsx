@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Mind from '../../images/mindset.jpg'
 import Button from '../partials/Button';
+import data from '../partials/data';
 
 const Mindset = () => {
+    
+    const [ num, setNum ] = useState(11)
+
+    const handleClick = (param) => {
+        
+        if( param === 'back' && num !== 11 ){
+            setNum( num - 1 )
+        } else if (param === 'next' && num !== 12){
+            setNum( num + 1 )
+        }
+    }
+
     return (
         <div className="d-flex">
             <img src={Mind} className="mindset-img" alt=""/>
             <div>
-                <h2>Shift your Mindset</h2>
-                <p>Change your mindset and make your life better ! First Make a Decision: Be sure about what you want in life. Then trace a solid plan to achieve it. To keep yourself motivated, know how to Self Talk. Set your body posture to succeed. During this journey you can meditate to know yourself better.</p>
-                <Button color="#f44336" value="Back"/>
-                <Button color="#4CAF50" value="Next"/>
+            <h2>{data[num].title}</h2>
+                <p>{data[num].text}</p>
+                <Button color="#f44336" value="Back" event={() => handleClick('back')}/>
+                <Button color="#4CAF50" value="Next" event={() => handleClick('next')}/>
+            
             </div>
         </div>
     )

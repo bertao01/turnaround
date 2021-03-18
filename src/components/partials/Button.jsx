@@ -11,7 +11,7 @@ const Button = props => {
     }
 
     return (
-        <button style={buttonStyle}>
+        <button style={buttonStyle} onClick={props.event}>
             {props.value}
         </button>
     )

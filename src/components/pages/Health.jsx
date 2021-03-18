@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Exercise from '../../images/health.jpg'
 import Button from '../partials/Button';
+import '../partials/data'
+import data from '../partials/data';
 
 const Health = () => {
+
+    const [ num, setNum ] = useState(0)
+
+    const handleClick = (param) => {
+        
+        if( param === 'back' && num !== 0 ){
+            setNum( num - 1 )
+        } else if (param === 'next' && num !== 4){
+            setNum( num + 1 )
+        }
+    }
+
     return (
         <div className="d-flex">
             <div>
                 <img src={Exercise} className="health-img" alt=""/>
             </div>
             <div>
-                <h2>Don't forget your health</h2>
-                <p>Health is our biggest asset. It doesn't matter who you are, you must watch what you eat and what you do to preserve a healthy lifestyle. Plan a healthy diet, Avoid sugar, fat and salt in excess, reduce alcohol consumption, quit smoking, make exercises. You can even start a dopamine fast to enjoy common activities in life.</p>
-                <Button color="#f44336" value="Back"/>
-                <Button color="#4CAF50" value="Next"/>
+                <h2>{data[num].title}</h2>
+                <p>{data[num].text}</p>
+                <Button color="#f44336" value="Back" event={() => handleClick('back')}/>
+                <Button color="#4CAF50" value="Next" event={() => handleClick('next')}/>
             </div>
         </div>
     )
