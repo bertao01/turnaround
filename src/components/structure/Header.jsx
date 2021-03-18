@@ -5,11 +5,8 @@ import Success from '../../images/growth.png'
 const Header = () => {
     return (
         <header>
-                <h4>Forget 2020 and change your mindset for better</h4>
-                <a href="https://en.wikipedia.org/wiki/Mindset">
-                    <img src={Success} className="growth-img" alt="growth"/>            
-                </a>
-            </header>
+              <h1>Welcome 2021 ! </h1>
+        </header>
     )
 }
 

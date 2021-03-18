@@ -16,32 +16,39 @@ import About from '../pages/About'
 const Main = () => {
     return (
     <Router>
-        <nav>
-            <ul className="nav-links">
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/health">Health</Link>
-                </li>
-                <li>
-                    <Link to="/gratitude">Gratitude</Link>
-                </li>
-                <li>
-                    <Link to="/minimalism">Minimalism</Link>
-                </li>
-                <li>
-                    <Link to="/career">Career</Link>
-                </li>
-                <li>
-                    <Link to="/mindset">Mindset</Link>
-                </li>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-            </ul>
-        </nav>
-
+        <div className="text-center">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                    <li class="nav-item ">
+                        <Link className="text-dark" to="/">Home</Link>
+                    </li>
+                    <li class="nav-item ">
+                        <Link className="text-dark"to="/health">Health</Link>
+                    </li>
+                    <li class="nav-item ">
+                        <Link className="text-dark"to="/gratitude">Gratitude</Link>
+                    </li>
+                    <li class="nav-item ">
+                        <Link className="text-dark"to="/minimalism">Minimalism</Link>
+                    </li>
+                    <li class="nav-item ">
+                        <Link className="text-dark"to="/career">Career</Link>
+                    </li>
+                    <li class="nav-item ">
+                        <Link className="text-dark"to="/mindset">Mindset</Link>
+                    </li>
+                    <li class="nav-item ">
+                        <Link className="text-dark"to="/about">About</Link>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
         <main>
             <Switch>
                 <Route exact path="/">

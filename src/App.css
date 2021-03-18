@@ -62,9 +62,6 @@ header img{
   top: 20px;
 }
 
-header h4{
-  display: inline;
-}
 
 .poop-img:hover{
   transform:scale(1.1)
@@ -75,12 +72,9 @@ header h4{
 }
 
 /* Navigation */
-
-.nav-links{
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.nav-item{
+  color: black;
+  margin: 0 25px 0 0 ;
 }
 
 .nav-links li{
@@ -118,9 +112,6 @@ footer{
 
 @media(max-width:800px)
 {
-  header{
-    display:none; 
-  }
   .nav-links{
     flex-direction: column;
   }
