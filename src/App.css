@@ -6,6 +6,10 @@ img{
   margin:10px;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
 p{
   text-align: justify;
   margin: 10px;
@@ -29,9 +33,10 @@ main{
 
 
 .App {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  align-items: stretch;
+  flex-wrap: wrap;
   grid-template-columns: 100%;
   grid-template-rows: 1fr 1fr 5fr 1fr;
 }
@@ -63,18 +68,16 @@ header h4{
 }
 
 /* Navigation */
-nav{
-  grid-column: 1/3;
-}
 
 .nav-links{
   list-style-type: none;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .nav-links li{
-  display: inline;
-  padding: 0 5% 0 0 ;
+  padding: 0 25px 0 0 ;
 }
 
 .nav-links a{
@@ -94,7 +97,7 @@ a:hover{
 
 .success-img, .gratitude-img, .health-img, .career-img, .minimalism-img, .mindset-img, .profile-img{
   width: 300px;
-  height: auto;
+  height: 300px;
 }
 
 .profile-img{
@@ -102,12 +105,21 @@ a:hover{
 }
 
 /* Footer */
-footer{
-  grid-column: 1/3;
+footer p{
+  margin: 30px 0;
+  text-align: center;
 }
 
-footer p{
-  text-align: center;
-  position: relative;
-  top: 20px;
+@media(max-width:800px)
+{
+  header{
+    display:none; 
+  }
+  .nav-links{
+    flex-direction: column;
+  }
+
+  .d-flex{
+    flex-direction: column;
+  }
 }
